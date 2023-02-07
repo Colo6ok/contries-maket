@@ -1,0 +1,37 @@
+:root {
+  --bck-color: #202c36;
+  --color: #fff;
+}
+
+.site-header {
+  min-width: 900px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  padding: 23px 0;
+  margin-bottom: 48px;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  color: #111517;
+}
+
+.header__btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+body.dark-mode {
+  background-color: var(--bck-color);
+  color: var(--color);
+}
