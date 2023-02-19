@@ -2,26 +2,29 @@ import React from "react";
 import { ReactDOM } from "react";
 import CardsStyle from "./Cards.scss";
 
-const Cards = (props) => {
+const Cards = ({ item }) => {
   return (
     <>
       <section className="cards">
         <div className="container">
           <div className="cards__inner">
-              <img src={props.pic} alt="this is a difference counties flag" />
+              <img
+                src={item.flags.png}
+                alt={item.flags.alt}
+              />
             <li className="cards__item">
-              <h3 className="cards__title">{props.country}</h3>
+              <h3 className="cards__title">{item.name.common}</h3>
               <p className="cards__desc">
                 Population:
-                <span className="cards__controller">{props.number}</span>
+                <span className="cards__controller"> {item.population}</span>
               </p>
               <p className="cards__desc">
                 Region:
-                <span className="cards__controller">{props.location}</span>
+                <span className="cards__controller"> {item.region}</span>
               </p>
               <p className="cards__desc">
-                Capital: 
-                <span className="cards__controller">{props.cap}</span>
+                Capital:
+                <span className="cards__controller"> {item.capital}</span>
               </p>
             </li>
           </div>

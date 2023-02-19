@@ -1,9 +1,9 @@
 import React from "react";
-import { ReactDOM } from "react";
 import FormStyle from "./Form.scss";
 import SearchPic from "../assets/Images/search.svg";
 
 const Form = () => {
+
   return (
     <>
       <div className="container">
@@ -16,10 +16,10 @@ const Form = () => {
                 aria-label="searcher"
                 placeholder="Search for a country…"
                 className="form__input"
-              />
+             />
             </label>
             <select className="form__select" name="user_select" id="">
-              <option  value="filter by ragion" disabled selected>
+              <option value="filter by ragion" disabled selected>
                 Filter by Region
               </option>
               <option value="Africa">Africa</option>
