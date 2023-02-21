@@ -1,24 +1,31 @@
 import React from "react";
-import FormStyle from "./Form.scss";
+import "./Form.scss";
 import SearchPic from "../assets/Images/search.svg";
 
-const Form = () => {
-
+const Form = ({ setValue, setSelect }) => {
   return (
     <>
       <div className="container">
         <div className="form__wrapper">
-          <form method="post" className="form">
+          <div className="box">
             <label className="form__label">
               <img className="form__pic" src={SearchPic} alt="" />
               <input
-                type="text"
+                type="search"
                 aria-label="searcher"
                 placeholder="Search for a country…"
                 className="form__input"
-             />
+                onKeyUp={(evt) => {
+                  if (evt.code === "Enter") {
+                    setValue(evt.target.value);
+                    evt.target.value = "";
+                  }
+                }}
+              />
             </label>
-            <select className="form__select" name="user_select" id="">
+            <select className="form__select" name="user_select" onChange={(evt) => {
+              setSelect(evt.target.value);
+            }}>
               <option value="filter by ragion" disabled selected>
                 Filter by Region
               </option>
@@ -28,7 +35,7 @@ const Form = () => {
               <option value="Europe">Europe</option>
               <option value="Oceania">Oceania</option>
             </select>
-          </form>
+          </div>
         </div>
       </div>
     </>
